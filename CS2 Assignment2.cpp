@@ -7,23 +7,26 @@
 #include <fstream>
 #include <iomanip>
 #include <list>
+#include "queue.h"
 using namespace std;
 
 int main()
 {
+	queue<customer> customerz;
+
 	//-----------------------mechanic info-----------------------
 	mechanic ahmed;
-	ahmed.setname("Ahmed");
+	ahmed.setname("ahmed");
 	ahmed.setage(18);
 	ahmed.setid(101);
 
 	mechanic khaled;
-	khaled.setname("Khaled");
+	khaled.setname("khaled");
 	khaled.setage(38);
 	khaled.setid(102);
 
 	mechanic mai;
-	mai.setname("Mai");
+	mai.setname("mai");
 	mai.setage(27);
 	mai.setid(103);
 
@@ -146,14 +149,23 @@ int main()
 				}
 			}
 		}
-	//--------------------output ordered appoinments---------------------------
+
+	//--------------------output ordered appoinments (USING TEMPLATE QUEUE SYSTEM)---------------------------
+	for (int i = 0; i < todayscustomers.size(); i++)
+		customerz.push(todayscustomers[i]);
+
 	cout << "Ordered queue of appointments:  " << endl << endl;
+
 	for (int i = 0; i < todayscustomers.size(); i++)
 	{
-		if(todayscustomers[i].hasAppointment==1)
-		cout << todayscustomers[i].getname() << " has an appointment at " << todayscustomers[i].getappointment_h() << ":"
-			<< setw(2) << setfill('0') << todayscustomers[i].getappointment_m() << " with " << todayscustomers[i].getmechanicname() << endl;
+		if (todayscustomers[i].hasAppointment == 1)
+		{
+		
+			cout << customerz.returnfront().getname() << " has an appointment at " << customerz.returnfront().getappointment_h() << ":"
+			<< setw(2) << setfill('0') << customerz.returnfront().getappointment_m() << " with " << customerz.returnfront().getmechanicname() << endl;
+		}
+		customerz.pop();
+		
 	}
-
 
 }
