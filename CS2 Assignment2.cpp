@@ -15,25 +15,25 @@ int main()
 	queue<customer> customerz;
 
 	//-----------------------mechanic info-----------------------
-	mechanic ahmed;
-	ahmed.setname("ahmed");
+	mechanic Ahmed;
+	ahmed.setname("Ahmed");
 	ahmed.setage(18);
 	ahmed.setid(101);
 
-	mechanic khaled;
-	khaled.setname("khaled");
+	mechanic Khaled;
+	khaled.setname("Khaled");
 	khaled.setage(38);
 	khaled.setid(102);
 
 	mechanic mai;
-	mai.setname("mai");
+	mai.setname("Mai");
 	mai.setage(27);
 	mai.setid(103);
 
 	vector <mechanic> todaysmechanics;
-	todaysmechanics.push_back(ahmed);
-	todaysmechanics.push_back(khaled);
-	todaysmechanics.push_back(mai);
+	todaysmechanics.push_back(Ahmed);
+	todaysmechanics.push_back(Khaled);
+	todaysmechanics.push_back(Mai);
 
 	//---------------------------customer info-----------------------
 	ifstream customerlist("customers.txt");
