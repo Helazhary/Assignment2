@@ -1,9 +1,5 @@
 #pragma once
-#include "customer.h"
-#include "person.h"
-#include "mechanic.h"
 #include <iostream>
-#include <string>
 using namespace std;
 
 
